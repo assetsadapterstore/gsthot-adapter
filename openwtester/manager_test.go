@@ -30,7 +30,7 @@ func testInitWalletManager() *openw.WalletManager {
 
 func TestWalletManager_CreateWallet(t *testing.T) {
 	tm := testInitWalletManager()
-	w := &openwallet.Wallet{Alias: "HELLO GST", IsTrust: true, Password: "12345678"}
+	w := &openwallet.Wallet{Alias: "HELLO GST 2", IsTrust: true, Password: "12345678"}
 	nw, key, err := tm.CreateWallet(testApp, w)
 	if err != nil {
 		log.Error(err)
@@ -46,7 +46,7 @@ func TestWalletManager_GetWalletInfo(t *testing.T) {
 
 	tm := testInitWalletManager()
 
-	wallet, err := tm.GetWalletInfo(testApp, "WE8JxSUQvxy4hJe8NMJyAewh6SLvqvmzpJ")
+	wallet, err := tm.GetWalletInfo(testApp, "W5aLsVkgMAWdsuytgQFhViU7pYo9Tn6zu4")
 	if err != nil {
 		log.Error("unexpected error:", err)
 		return
@@ -75,8 +75,8 @@ func TestWalletManager_CreateAssetsAccount(t *testing.T) {
 
 	tm := testInitWalletManager()
 
-	walletID := "WE8JxSUQvxy4hJe8NMJyAewh6SLvqvmzpJ"
-	account := &openwallet.AssetsAccount{Alias: "testerbob", WalletID: walletID, Required: 1, Symbol: "GST", IsTrust: true}
+	walletID := "W5aLsVkgMAWdsuytgQFhViU7pYo9Tn6zu4"
+	account := &openwallet.AssetsAccount{Alias: "testerbob111", WalletID: walletID, Required: 1, Symbol: "GST", IsTrust: true}
 	account, address, err := tm.CreateAssetsAccount(testApp, walletID, "12345678", account, nil)
 	if err != nil {
 		log.Error(err)
@@ -93,7 +93,7 @@ func TestWalletManager_GetAssetsAccountList(t *testing.T) {
 
 	tm := testInitWalletManager()
 
-	walletID := "WE8JxSUQvxy4hJe8NMJyAewh6SLvqvmzpJ"
+	walletID := "W5aLsVkgMAWdsuytgQFhViU7pYo9Tn6zu4"
 	list, err := tm.GetAssetsAccountList(testApp, walletID, 0, 10000000)
 	if err != nil {
 		log.Error("unexpected error:", err)
@@ -129,7 +129,7 @@ func TestWalletManager_GetAddressList(t *testing.T) {
 
 	tm := testInitWalletManager()
 
-	walletID := "WE8JxSUQvxy4hJe8NMJyAewh6SLvqvmzpJ"
+	walletID := "W5aLsVkgMAWdsuytgQFhViU7pYo9Tn6zu4"
 	accountID := "9trZwCZTSWyGodWkG6W2YjyqQFtbs26FUbHXbZYh969E"
 	list, err := tm.GetAddressList(testApp, walletID, accountID, 0, -1, false)
 	if err != nil {
