@@ -7,4 +7,7 @@ require (
 	github.com/blocktree/eosio-adapter v1.3.0
 	github.com/blocktree/go-owcdrivers v1.2.0
 	github.com/blocktree/openwallet v1.7.0
+	github.com/eoscanada/eos-go v0.8.16
 )
+
+replace github.com/eoscanada/eos-go => github.com/blocktree/eos-go v0.8.13-blocktree
